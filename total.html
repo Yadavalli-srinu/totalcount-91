@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+       .bg{
+           background-color: rgba(173, 216, 230, 0.671);
+           height: 100vh;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+        
+        }
+        .bg1{
+            background-color:white;
+            box-shadow:0 2px 5px;
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 450px;
+        }
+        h1{
+            color:black;
+            font-size: 1.3rem;
+        }
+        input {
+             border: 1px solid gray;
+             border-radius: 6px;
+             padding: 8px 10px;
+             font-size: 1rem;
+             width: 100%;
+        }
+        button {
+             background-color: limegreen;
+             color: white;
+             border: none;
+             border-radius: 6px;
+             padding: 10px;
+             cursor: pointer;
+             font-size: 1rem;
+        }
+        button:hover {
+        background-color: lightgreen;
+       }
+       p{
+        color: green;
+        font-size: 1.5rem;
+        text-align: center;
+        font-weight: bold;
+       }
+
+   
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <div class="bg1">
+               <h1>2000 Rupees Notes</h1>
+               <input type="text" id="bignotes">
+               <h1>1000 Rupees Notes</h1>
+               <input type="text" id="smallnotes">
+               <h1>500 Rupees Notes</h1>
+               <input type="text" id="verysmallnotes">
+               <h1>Total Amount</h1>
+               <button onclick="totalamount()">View</button>
+               <p id="totalamount"></p>
+        </div>
+    </div>
+    <script>
+     function totalamount(){
+            let bignotes1=document.getElementById("bignotes")
+            let user=Number(bignotes1.value);
+            let bignotes2=document.getElementById("smallnotes")
+            let user1=Number(bignotes2.value);
+            let bignotes3=document.getElementById("verysmallnotes")
+            let user2=Number(bignotes3.value);
+            let totalamount=document.getElementById("totalamount");
+            totalamount.textContent ="Total amount is"+" "+"₹"+((user*2000) + (user1*1000) + (user2*500)); 
+    }
+    </script>
+</body>
+</html>
